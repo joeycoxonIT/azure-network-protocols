@@ -104,3 +104,18 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <p>
 <img src="https://i.imgur.com/RXDhfxi.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
+<br />
+
+<h3>4) Ensure both VMs are within the same Virtual Network (VNet) and Subnet</h3>
+<p>
+
+- Navigate to Virtual Machines
+- Click on your Windows virtual machine and check the name of the virtual network/subnet
+- Click on your Linux virtual machine and ensure that the virtual network/subnet is the same as your Windows virtual machine
+</p>
+<p>
+<img src="https://i.imgur.com/dWUwyEu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/MrvPL8O.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
