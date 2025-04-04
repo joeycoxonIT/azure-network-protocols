@@ -119,3 +119,31 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <p>
 <img src="https://i.imgur.com/MrvPL8O.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
+<br />
+
+<h3>5) Use Remote Desktop to connect to your Windows 10 Virtual Machine</h3>
+<p>
+
+- Go to the search bar at the bottom of the screen and enter and select "Remoke Desktop Connection"
+- Once you've opened "Remote Desktop Connection", enter the Public IP Address for your Windows 10 Virtual Machine. To find it, go to "Virtual machines" in Azure and click on your Windows 10 Virtual machine (in this case "windows-vm").
+- Once you've entered the public IP address, login to your virtual machine
+</p>
+<p>
+<img src="https://i.imgur.com/HCEAQJu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<br />
+
+<h3>6) Install and Open Wireshark on a Windows 10 Virtual Machine</h3>
+<p>
+
+- In your Windows 10 Virtual Machine paste this link into a browser: "https://www.wireshark.org".
+- Once you click "Download", for this tutorial, select the "Windows x64 Installer"
+- Once you've downloaded the file, click "open file" and install "Wireshark"
+</p>
+<p>
+<img src="https://i.imgur.com/VNAJ3c5.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/Oze6GJ6.png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
+</p>
+<br />
