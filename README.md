@@ -147,3 +147,66 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <img src="https://i.imgur.com/Oze6GJ6.png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
 </p>
 <br />
+
+<h3>7) Observe Network Traffic</h3>
+<p>
+
+- In the search bar at the bottom of the screen, type and open "Wireshark"
+- Once "Wireshark" is open, single click "Ethernet" to ensure it's highlighted, then start packet capture by clicking the blue fin icon at the top left of the page (below "File")
+</p>
+<p>
+<img src="https://i.imgur.com/ree9GLk.png" height="70%" width="70%" alt="Disk Sanitization Steps"/>
+</p>
+
+<h3>8) Observe ICMP Traffic</h3>
+<p>
+
+- Within Wireshark, type in "icmp" in the search bar at the top then hit enter to filter only ICMP traffic.
+- Go into the "Virtual machines" page in Azure to retrieve the private IP address of the Linux virtual machine (linux-vm).
+- Go to the search bar at the bottom of the screen in your Windows virtual machine and type and open "Windows Powershell"
+- Within Powershell, we want to ping the private IP address of the Linux virtual machine. Type in "ping" followed by the private IP address (example: ping 10.0.0.5).
+</p>
+<p>
+<img src="https://i.imgur.com/Yu7RHNd.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+  
+- Attempt to ping a public website and observe traffic (example: www.google.com)
+</p>
+<p>
+<img src="https://i.imgur.com/nEpSfRs.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+  
+- Initiate a perpetual/non-stop ping from your Windows 10 virtual machine to your Linux virtual machine (example: ping 10.0.0.5 -t)
+</p>
+<p>
+<img src="https://i.imgur.com/OMQdH8r.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+  
+- Open the Network Security Group your Linux virtual machine is using and disable incoming (inbound) ICMP traffic. To do this, navigate to virtual machines in Azure, then click your Linux virtual machine (linux-vm), then click "Networking" -> "Network settings" and then select your Network security group (example: linux-vm-nsg)
+- Once you're in the Network security group page, on the left of the page, click "Settings" -> "Inbound security rules", then click "Add". Once that's done, under "Destination port ranges" type in "*". Under Protocol, select "ICMPv4". Under "Action", select "Deny". Under "Priority" type "290". Then click "Add".
+</p>
+<p>
+<img src="https://i.imgur.com/tRcOBti.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/Hpn0XHV.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+
+- Back in the Windows 10 virtual machine, observe the ICMP traffic in WireShark and the command line Ping activity, if done correctly the ping requests should continue to time out
+</p>
+<p>
+<img src="https://i.imgur.com/9rK6eS6.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+
+- Re-enable ICMP traffic by deleting it from the Network Security Group
+- Back in the Windows 10 virtual machine, observe the ICMP traffic in WireShark and the command line Ping activity, the ping requests should start working again
+- Stop the ping activity though "Ctrl + C" in Powershell, then click the "Square" icon in Wireshark.
+</p>
+<p>
+<img src="https://i.imgur.com/7QNtzP9.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
