@@ -205,7 +205,20 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 - Re-enable ICMP traffic by deleting it from the Network Security Group
 - Back in the Windows 10 virtual machine, observe the ICMP traffic in WireShark and the command line Ping activity, the ping requests should start working again
-- Stop the ping activity though "Ctrl + C" in Powershell, then click the "Square" icon in Wireshark.
+- Stop the ping activity by hitting "Ctrl + C" in Powershell, then click the "Square" icon in Wireshark.
+</p>
+<p>
+<img src="https://i.imgur.com/7QNtzP9.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<br />
+
+
+<h3>9) Observe SSH Traffic</h3>
+<p>
+
+- In Wireshark, type in the search bar "SSH" and hit "Enter" to filter for only SSH traffic
+- Open Powershell again and type ssh (username@ private IP address) (example: ssh labuser@10.0.0.5)
+- Once that's done, type commands (id, hostname, ) into the linux SSH connection and observe SSH traffic spam in WireShark
 </p>
 <p>
 <img src="https://i.imgur.com/7QNtzP9.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
