@@ -216,10 +216,84 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <h3>9) Observe SSH Traffic</h3>
 <p>
 
-- In Wireshark, type in the search bar "SSH" and hit "Enter" to filter for only SSH traffic
-- Open Powershell again and type ssh (username@ private IP address) (example: ssh labuser@10.0.0.5)
-- Once that's done, type commands (id, hostname, ) into the linux SSH connection and observe SSH traffic spam in WireShark
+- In Wireshark, type in the search bar "SSH" and hit "Enter" to filter for only SSH traffic.
+- Open Powershell again and type ssh (username@ private IP address) (example: ssh labuser@10.0.0.5).
+- Once that's done, type commands (username, pwd, etc) into the linux SSH connection and observe SSH traffic spam in WireShark.
 </p>
 <p>
-<img src="https://i.imgur.com/7QNtzP9.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/6FfxOHf.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
+<p>
+
+- To close the SSH connection, type "exit" in Powershell
+</p>
+<br />
+
+<h3>10) Observe DHCP Traffic</h3>
+
+<p>
+
+- In Wireshark, type in the search bar "dhcp" and hit "Enter" to filter for only DHCP traffic.
+- Next we want to create a script to enter in Powershell later, open Notepad and type in "ipconfig /release" and "ipconfig /renew"
+- Save the file to "c:\programdata" and save it as "dhcp.bat", where you see
+</p>
+<p>
+<img src="https://i.imgur.com/RfvpNBl.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/ijybvew.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+  
+- Go to Powershell and type and enter ".\dhcp.bat" to issue your virtual machine a new IP address
+- Observe DHCP traffic
+</p>
+<p>
+<img src="https://i.imgur.com/HRH0Txr.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<br />
+
+<h3>11) Observe DNS Traffic</h3>
+
+<p>
+
+- In Wireshark, type in the search bar "dns" and hit "Enter" to filter for only DNS traffic.
+- In Powershell, use "nslookup" to see the IP address for a website (example: "nslookup google.com" or "nslookup disney.com")
+- Observe DNS traffic
+</p>
+<p>
+<img src="https://i.imgur.com/HfL7qhh.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<br />
+
+<h3>12) Observe RDP Traffic</h3>
+
+<p>
+
+- In Wireshark, type in the search bar "tcp.port == 3389" and hit "Enter" to filter for only RDP traffic.
+- Observe RDP traffic
+- You'll notice that the traffic is non-stop because the RDP (protocol) is constantly showing a live stream from one computer to another, therefore traffic is always being transmitted
+</p>
+<p>
+<img src="https://i.imgur.com/70sUnmd.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<br />
+
+<h3>13) Clean Up Azure Environment</h3>
+
+<p>
+
+- First close your Remote Desktop connection
+- Go into Azure and navigate to "Resource groups"
+- Delete the Resource group that you created at the beginning of the lab
+- Verify that the resource group has been deleted
+</p>
+<p>
+<img src="https://i.imgur.com/GatVzak.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://i.imgur.com/OkURrNk.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<br />
+
+<h3>Congratulations! You've completed this tutorial.</h3>
