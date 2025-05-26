@@ -235,7 +235,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 - In Wireshark, type in the search bar "dhcp" and hit "Enter" to filter for only DHCP traffic.
 - Next we want to create a script to enter in Powershell later, open Notepad and type in "ipconfig /release" and "ipconfig /renew"
-- Save the file to "c:\programdata" and save it as "dhcp.bat", where you see
+- Save the file to "c:\programdata". Make sure "all files" is selected and name it "dhcp.bat".
 </p>
 <p>
 <img src="https://i.imgur.com/RfvpNBl.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
